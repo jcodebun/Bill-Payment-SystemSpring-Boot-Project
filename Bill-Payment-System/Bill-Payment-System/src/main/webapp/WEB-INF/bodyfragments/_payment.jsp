@@ -1,0 +1,71 @@
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="sf"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="crt"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
+	<div class="container">
+		<br>
+<div class="container"> 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item linkSize"><i class="fas fa-tachometer-alt"></i> <a class="link-dark" href="<c:url value="/welcome"/>">Home</a></li>
+    <li class="breadcrumb-item linkSize active" aria-current="page"> <i class="fa fa-arrow-right" aria-hidden="true"></i>Payment</li>
+  </ol>
+</nav>
+</div>
+<hr>
+
+	
+<div class="card">
+			<h5 class="card-header"
+				style="background-color: #00061df7; color: white;">Payment</h5>
+			<div class="card-body">
+			
+				<sf:form method="post"
+					action="${pageContext.request.contextPath}/ctl/invoice"
+							modelAttribute="form">
+				
+
+
+						
+					<div class="col-md-12">
+						<label for="inputEmail4" class="form-label">Card No</label>
+						 <input type="text" name="cardNo" placeholder="Enter Card No" class="form-control" id="inputEmail4"
+						 value="" required="required">
+					</div>
+					
+					<div class="col-md-12">
+						<label for="inputEmail4" class="form-label">Name</label>
+						 <input type="text" name="name" placeholder="Enter Card Holder Name" class="form-control" id="inputEmail4"
+						 value="" required="required">
+					</div>
+					
+					<div class="col-md-6">
+						<label for="inputEmail4" class="form-label">Month</label>
+						 <input type="text" name="month" placeholder="Enter Month" class="form-control" id="inputEmail4"
+						 value="" required="required">
+					</div>
+					
+					<div class="col-md-6">
+						<label for="inputEmail4" class="form-label">Year</label>
+						 <input type="text" name="year" placeholder="Enter Year" class="form-control" id="inputEmail4"
+						 value="" required="required">
+					</div>
+					
+					<div class="col-md-12">
+						<label for="inputEmail4" class="form-label">CVV</label>
+						 <input type="text" name="cvv" placeholder="Enter CVV" class="form-control" id="inputEmail4"
+						 value="" required="required">
+					</div>
+					<br>
+					
+					<div class="col-12">
+						<input type="submit" name="operation"
+									value="Payment"
+									class="btn btn-primary btn btn-info" />
+					</div>
+				</sf:form>
+			</div>
+		</div></div>
+
+</body>
+</html>
